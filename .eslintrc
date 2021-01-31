@@ -1,0 +1,51 @@
+{
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": ["node"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["*.jsx"],
+      "extends": [
+        "plugin:react/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:jsx-a11y/recommended"
+      ]
+    },
+    {
+      "files": ["*.js"],
+      "extends": ["plugin:node/recommended"]
+    }
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-console": 0,
+    "no-var": "error",
+    "no-multiple-empty-lines": "error"
+  }
+}
